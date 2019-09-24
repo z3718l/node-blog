@@ -1,3 +1,4 @@
+// 程序运行第一步：createServer的逻辑
 const http = require('http')
 
 const PORT = 8100
