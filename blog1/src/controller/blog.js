@@ -30,6 +30,22 @@ const getDetail = (id) => {
   }
 }
 
+const newBlog = (blogData = {}) => {
+  // blogData是一个博客对象
+  return {
+    id: 3  // 表示新建博客，插入到数据表里面的id
+  }
+}
+
+const updateBlog = (id, blogData = {}) => {
+  return true
+}
+
+const delBlog = (id) => {
+  // id 就是要删除博客的id
+  return true
+}
+
 /**
  * 如果只有一个方法，可以直接module.exports = getList；
  * 返回一个对象的原因是：有多个方法
@@ -40,5 +56,8 @@ const getDetail = (id) => {
  */
 module.exports = {
   getList,
-  getDetail
+  getDetail,
+  newBlog,
+  updateBlog,
+  delBlog
 }
