@@ -20,6 +20,16 @@ const getList = (author, keyword) => {
   ]
 }
 
+const getDetail = (id) => {
+  return {
+    id: 1,
+    title: '标题A',
+    content: '内容A',
+    createTime: 1569307930504,
+    author: 'zhangsan'
+  }
+}
+
 /**
  * 如果只有一个方法，可以直接module.exports = getList；
  * 返回一个对象的原因是：有多个方法
@@ -29,5 +39,6 @@ const getList = (author, keyword) => {
  * }
  */
 module.exports = {
-  getList
+  getList,
+  getDetail
 }
