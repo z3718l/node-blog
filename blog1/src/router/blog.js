@@ -5,8 +5,6 @@ const { SuccessModel, ErrorModel } = require('../model/resModel')
 const handleBlogRouter = (req, res) => {
   const method = req.method
   const id = req.query.id
-  // const url = req.url
-  // const path = url.split('?')[0]
 
   // 获取博客列表
   if(method === 'GET' && req.path === '/api/blog/list'){
