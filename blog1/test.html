@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function exec(abc) {
+    let promise = new Promise((resolve, reject) => {
+      // resolve(abc) // Promise {<resolved>: 123}
+       () => {
+         console.log('pppp')
+        resolve(abc)
+      }
+      // aa()
+      // Promise {<pending>}
+    })
+    return promise
+  }
+  // exec(123).then((data) => {
+  //   console.log(data)
+  // }).catch(err => {
+  //   console.log(err)
+  // })
+  console.log(exec(123))
+</script>
+</html>

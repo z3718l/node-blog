@@ -10,31 +10,16 @@ db.connect()
 
 // 统一执行sql的函数
 function exec(sql) {
-  // let promise = new Promise((resolve, reject) => {
-    
-  //   db.query(sql, (err, result) => {
-  //     console.log(result)
-  //     if (err) {
-  //       reject(err)
-  //       return
-  //     }
-  //     resolve(result)
-  //     // console.log(result)
-      
-  //   })
-  // })
-  // return promise
-
-  db.query(sql, (err, result) => {
-    console.log(result)
-    if (err) {
-      console.log(err)
-      return
-    }
-    return result
+  let promise = new Promise(function selectCb(resolve, reject) {
+    db.query(sql, (err, result) => {
+      if(err) {
+        reject(err)
+      }
+      resolve(result)
+    })
   })
+  return promise
 }
-
 module.exports = {
   exec
 }

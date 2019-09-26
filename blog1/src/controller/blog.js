@@ -1,16 +1,16 @@
 // 程序运行第四步：处理数据
 
 const { exec } = require('../db/mysql')
-
+// console.log(exec)
 const getList = (author, keyword) => {
   let sql = `select * from blogs where 1=1 `
-  // if(author) {
-  //   sql += `and author=${author} `
-  // }
-  // if(keyword) {
-  //   sql += `and title like '%${keyword}%' `
-  // }
-  // sql += `order by createtime desc;`
+  if(author) {
+    sql += `and author=${author} `
+  }
+  if(keyword) {
+    sql += `and title like '%${keyword}%' `
+  }
+  sql += `order by createtime desc;`
   // 返回promise
   return exec(sql)
   // return [
