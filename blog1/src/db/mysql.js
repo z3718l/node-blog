@@ -6,22 +6,33 @@ const { MYSQL_CONF } = require('../conf/db')
 let db = mysql.createConnection(MYSQL_CONF)
 
 // 开始连接
-// db.connect()
+db.connect()
 
 // 统一执行sql的函数
 function exec(sql) {
-  const promise = new Promise((resolve, reject) => {
-    db.query(sql, (err, result) => {
-      // console.log(result)
-      if (err) {
-        reject(err)
-          return
-      } else {
-        resolve(result)
-      }
-    })
+  // let promise = new Promise((resolve, reject) => {
+    
+  //   db.query(sql, (err, result) => {
+  //     console.log(result)
+  //     if (err) {
+  //       reject(err)
+  //       return
+  //     }
+  //     resolve(result)
+  //     // console.log(result)
+      
+  //   })
+  // })
+  // return promise
+
+  db.query(sql, (err, result) => {
+    console.log(result)
+    if (err) {
+      console.log(err)
+      return
+    }
+    return result
   })
-  return promise
 }
 
 module.exports = {
