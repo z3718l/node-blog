@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>index</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+</head>
+<body>
+  <h2>首页</h2>
+</body>
+</html>
+<script>
+  function get() {
+    $.get('http://localhost:8800/api/blog/list', function(data) {
+      console.log(data)
+    })
+  }
+  get()
+</script>
