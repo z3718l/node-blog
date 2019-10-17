@@ -27,20 +27,20 @@ router.post('/login', function(req, res, next) {
   
 });
 
-router.get('/login-test', (req, res, next) => {
-  if(req.session.username) {
-    res.json({
-      errno: 0,
-      msg: '测试成功'
-    })
-    return
+// router.get('/login-test', (req, res, next) => {
+//   if(req.session.username) {
+//     res.json({
+//       errno: 0,
+//       msg: '测试成功'
+//     })
+//     return
     
-  }
-  res.json({
-    errno: -1,
-    msg: '未登陆'
-  })
-})
+//   }
+//   res.json({
+//     errno: -1,
+//     msg: '未登陆'
+//   })
+// })
 
 // router.get('/session-test', (req, res, next) => {
 //   const session = req.session
