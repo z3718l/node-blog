@@ -21,7 +21,9 @@ const redisClient = require('./db/redis')
 const sessionStore = new RedisStore({
   client: redisClient
 })
-app.use(logger('dev'));
+app.use(logger('dev', {
+  stream: process.stdout
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
