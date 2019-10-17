@@ -24,10 +24,21 @@ router.get('/list', function(req, res, next) {
   })
 });
 router.get('/detail', function(req, res, next) {
-  res.json({
-    err: 0,
-    data: 'OK'
+  const result = getDetail(id)
+  return result.then(data => {
+    res.json(
+      new SuccessModel(data)
+    ) 
   })
+});
+router.post('/new', function(req, res, next) {
+  res.json('新建')
+});
+router.post('/update', function(req, res, next) {
+  res.json('修改')
+});
+router.post('/del', function(req, res, next) {
+  res.json('删除')
 });
 
 module.exports = router;
